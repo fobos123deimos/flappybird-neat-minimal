@@ -1,0 +1,11 @@
+This directory contains a customized version of the PyGame Learning Environment (PLE),
+originally developed by Nuno Tasfi and contributors:
+https://github.com/ntasfi/PyGame-Learning-Environment
+
+The original project is licensed under the MIT License.
+
+Modifications were made in 2024 by Matheus Gomes Cordeiro to enable controlled
+scenario generation and better integration with NEAT-based training strategies
+for the Flappy Bird game environment.
+
+These modifications were made for research and experimentation purposes.

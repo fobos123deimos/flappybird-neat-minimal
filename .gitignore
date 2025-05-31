@@ -1,11 +1,40 @@
-.bash_logout
-.bash_logout .bashrc .gitconfig
-.gitignore .ipynb_checkpoints
-.bashrc .profile .jupyter-server-log.txt
-.bashrc
-.profile
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
-.ipython/
-.jupyter/
-.local/
-.jupyter-server-log.txt
+
+# VSCode settings
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+jupyter-server-log.txt
+
+# Python history/cache
+.python_history
+.cache/
+
+# PyQt Designer
+*.ui~
+
+# Output media
+assets/*.mp4
+
+# Ignore any experiments or temp files
+*.tmp
+*.bak
+
+# If you're including a custom PLE, maybe ignore compiled stuff
+ple_custom/__pycache__/
