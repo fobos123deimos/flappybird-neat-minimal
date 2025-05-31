@@ -35,9 +35,7 @@ NEAT evolves both weights and topology of neural networks by starting with minim
 
 - **Speciation** based on genomic distance:
 
-  $$
-  \delta = c_1 \cdot \frac{E}{N} + c_2 \cdot \frac{D}{N} + c_3 \cdot \bar{W}
-  $$
+  $$\delta = c_1 \cdot \frac{E}{N} + c_2 \cdot \frac{D}{N} + c_3 \cdot \bar{W}$$
 
   Where:
   - $E$: number of excess genes  
