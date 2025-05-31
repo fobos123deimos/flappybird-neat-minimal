@@ -8,6 +8,10 @@ It introduces a **minimal yet effective training strategy** using the **NEAT (Ne
 
 ---
 
+🎥 [Watch a sample of the trained NEAT agent playing Flappy Bird (MP4)](assets/demo_result.mp4)
+
+---
+
 ## 🧠 Dependencies & Libraries
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/) [![NEAT-Python](https://img.shields.io/badge/neat--python-0.92-blue?style=flat-square)](https://neat-python.readthedocs.io/en/latest/) [![NumPy](https://img.shields.io/badge/NumPy-1.26.4-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org/) [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.8.0-11557C?style=flat-square&logo=matplotlib&logoColor=white)](https://matplotlib.org/) [![Graphviz](https://img.shields.io/badge/Graphviz-2.50+-E10098?style=flat-square&logo=graphviz&logoColor=white)](https://graphviz.org/) [![PyQt5](https://img.shields.io/badge/PyQt5-5.15.9-41CD52?style=flat-square&logo=qt&logoColor=white)](https://riverbankcomputing.com/software/pyqt/) [![PLE](https://img.shields.io/badge/PLE-Custom--Modified-orange?style=flat-square)](https://github.com/ntasfi/PyGame-Learning-Environment)
@@ -126,7 +130,7 @@ All modifications are documented in `ple_custom/NOTICE.txt`.
 ```bash
 git clone https://github.com/youruser/FLAPPYBIRD-NEAT-MINIMAL.git
 cd FLAPPYBIRD-NEAT-MINIMAL
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 ```
 
 You may also need:
