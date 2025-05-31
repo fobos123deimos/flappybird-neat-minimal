@@ -8,7 +8,7 @@ It introduces a **minimal yet effective training strategy** using the **NEAT (Ne
 
 ---
 
-🎥 [Watch a sample of the trained NEAT agent playing Flappy Bird (MP4)](assets/demo_result.mp4)
+🎥 [Watch a sample of the trained NEAT agent playing Flappy Bird (MP4)](https://drive.google.com/file/d/1Zqpkouve4UABpY74isQuIck13BtWacKS/view?usp=sharing)
 
 ---
 
