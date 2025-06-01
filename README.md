@@ -126,8 +126,8 @@ All modifications are documented in `ple_custom/NOTICE.txt`.
 ### 🔧 Installation
 
 ```bash
-git clone https://github.com/youruser/FLAPPYBIRD-NEAT-MINIMAL.git
-cd FLAPPYBIRD-NEAT-MINIMAL
+git clone https://github.com/youruser/flappybird-neat-minimal.git
+cd flappybird-neat-minimal
 pip install -r requirements.txt
 ```
 

@@ -11,7 +11,7 @@ import numpy as np
 from ple import PLE
 from ple.games import FlappyBird
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from SBGames_Paper_0.score_display_window import Ui_MainWindow  # Custom PyQt5 UI class for score display
+from score_display_window import Ui_MainWindow  # Custom PyQt5 UI class for score display
 
 # === CONFIGURATION ===
 
