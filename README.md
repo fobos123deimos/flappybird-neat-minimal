@@ -131,7 +131,7 @@ cd flappybird-neat-minimal
 pip install -r requirements.txt
 ```
 
-You may also need:
+You also need to install Graphviz. On Windows, download and run the installer from the official site:  [Graphviz for Windows](https://graphviz.org/download/).If you’re using Linux, run the command below in your terminal.
 
 ```bash
 sudo apt install graphviz
