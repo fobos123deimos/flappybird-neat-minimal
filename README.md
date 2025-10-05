@@ -56,9 +56,9 @@ References:
 ### 🎮 Game Domain: Flappy Bird
 
 The agent is evolved to play Flappy Bird, receiving 3 inputs:
-- Player vertical position ($y_p$)
-- Bottom pipe Y ($y_b$)
-- Gap center Y: $y_c = \frac{y_t + y_b}{2}$
+- Player vertical position ($y_p$).
+- Bottom pipe Y ($y_b$).
+- Gap center Y: $y_c = \frac{y_t + y_b}{2}$.
 
 And producing one output:
 - Jump if output $\geq 0.4$
@@ -109,15 +109,15 @@ All modifications are documented in `ple_custom/NOTICE.txt`.
 
 | Path                                 | Description                                                                 |
 |--------------------------------------|-----------------------------------------------------------------------------|
-| `assets/demo_result.mp4`             | Sample of a fully trained NEAT agent                                       |
-| `config/flappy_neat_feedforward_config` | NEAT configuration file (feedforward net, 3 inputs, 1 output)          |
-| `ple_custom/`                        | Custom version of PLE (modularized and adapted)                            |
-| `scr/train_agent.py`                | Evolves population using NEAT                                              |
-| `scr/evaluate_agent.py`             | Loads best genome and shows it playing with GUI                            |
-| `scr/neat_visualizations.py`        | Plots fitness over generations and speciation curves                       |
-| `scr/score_display_window.py`       | GUI component to display current score                                     |
-| `LICENSE`                            | MIT License                                                                |
-| `ple_custom/NOTICE.txt`             | Describes legal and authorship of modified PLE                            |
+| `assets/demo_result.mp4`             | Sample of a fully trained NEAT agent.                                       |
+| `config/flappy_neat_feedforward_config` | NEAT configuration file (feedforward net, 3 inputs, 1 output).          |
+| `ple_custom/`                        | Custom version of PLE (modularized and adapted).                            |
+| `scr/train_agent.py`                | Evolves population using NEAT.                                              |
+| `scr/evaluate_agent.py`             | Loads best genome and shows it playing with GUI.                            |
+| `scr/neat_visualizations.py`        | Plots fitness over generations and speciation curves.                       |
+| `scr/score_display_window.py`       | GUI component to display current score.                                     |
+| `LICENSE`                            | MIT License.                                                                |
+| `ple_custom/NOTICE.txt`             | Describes legal and authorship of modified PLE.                            |
 
 ---
 
