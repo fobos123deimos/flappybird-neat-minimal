@@ -125,6 +125,10 @@ All modifications are documented in `ple_custom/NOTICE.txt`.
 
 ### 🔧 Installation
 
+
+⚠️ **Attention →**  Consider installing **Anaconda** and creating a dedicated/separate environment before installing the dependencies from `requirements.txt` and running the experiments, to avoid library conflicts or dependency issues: [Anaconda Env](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+
+
 ```bash
 git clone https://github.com/youruser/flappybird-neat-minimal.git
 cd flappybird-neat-minimal
