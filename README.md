@@ -38,18 +38,18 @@ NEAT evolves both weights and topology of neural networks by starting with minim
   $$\delta = c_1 \cdot \frac{E}{N} + c_2 \cdot \frac{D}{N} + c_3 \cdot \bar{W}$$
 
   Where:
-  - $E$: number of excess genes  
-  - $D$: number of disjoint genes  
-  - $\bar{W}$: average weight difference of matching genes  
-  - $N$: normalization factor  
-  - $c_1, c_2, c_3$: speciation coefficients
+  - $E$: number of excess genes.
+  - $D$: number of disjoint genes.
+  - $\bar{W}$: average weight difference of matching genes.
+  - $N$: normalization factor.
+  - $c_1, c_2, c_3$: speciation coefficients.
 
-- **Fitness Sharing** and **Historical Markings** for safe crossover  
-- **Mutation operators**: adding/removing nodes and connections
+- **Fitness Sharing** and **Historical Markings** for safe crossover.
+- **Mutation operators**: adding/removing nodes and connections.
 
 References:
-- Stanley & Miikkulainen, *Evolving Neural Networks through Augmenting Topologies*, ECJ 2002  
-- Floreano et al., *Neuroevolution: from Architectures to Learning*, 2008
+- Stanley & Miikkulainen, *Evolving Neural Networks through Augmenting Topologies*, ECJ 2002.
+- Floreano et al., *Neuroevolution: from Architectures to Learning*, 2008.
 
 ---
 
@@ -74,10 +74,10 @@ F_i = w_1 \cdot \frac{P}{195} + w_2 \cdot \frac{S}{3} - w_3 \cdot \frac{|y_p - y
 $$
 
 Where:
-- $P$: number of frames survived  
-- $S$: number of pipes passed  
-- $y_p$: player vertical position  
-- $y_c$: center of pipe gap  
+- $P$: number of frames survived.
+- $S$: number of pipes passed.
+- $y_p$: player vertical position.
+- $y_c$: center of pipe gap.
 
 Final fitness across 3 scenarios:
 
@@ -98,8 +98,8 @@ ple_custom/
 ```
 
 Key changes:
-- Control over pipe-gap positioning  
-- Deterministic scenario generation for consistent evolution  
+- Control over pipe-gap positioning.
+- Deterministic scenario generation for consistent evolution.
 
 All modifications are documented in `ple_custom/NOTICE.txt`.
 
@@ -145,8 +145,8 @@ sudo apt install graphviz
 python scr/train_agent.py
 ```
 
-- Trains the population using NEAT  
-- Visualizes average/best fitness over time  
+- Trains the population using NEAT.
+- Visualizes average/best fitness over time.
 
 ---
 
@@ -156,9 +156,9 @@ python scr/train_agent.py
 python scr/evaluate_agent.py
 ```
 
-- Loads the best genome from checkpoint  
-- Displays game and current score using PyQt5  
-
+- Loads the best genome from checkpoint .
+- Displays game and current score using PyQt5.
+- If you want to close the program while the agent is playing, just close the Pygame window; if the agent collides during the game, press Ctrl+C in the terminal.
 ---
 
 ## 📄 Third-Party Notice
