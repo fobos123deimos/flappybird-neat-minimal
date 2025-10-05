@@ -265,9 +265,9 @@ class FlappyBird(base.PyGameWrapper):
         path = os.path.join(self._asset_dir, "base.png")
         self.images["base"] = pygame.image.load(path).convert()
 
-    def init(self,Gap_Vector,MAX_CONT):#Modificação
+    def init(self,Gap_Vector,MAX_CONT):#Modification
         
-        #Quando acontece um game_over um novo vetor de seeds é passado para a classe Flappy
+        #When a `game_over` occurs, a new vector of seeds is passed to the `Flappy` class.
         self.Gap_Vector = Gap_Vector
         self.MAX_CONT = MAX_CONT
         self.cont_gap = 0
@@ -368,10 +368,10 @@ class FlappyBird(base.PyGameWrapper):
     def getScore(self):
         return self.score
 
-    def _generatePipes(self,offset=0, pipe=None):#Modificação
+    def _generatePipes(self,offset=0, pipe=None):#Modification
 
         start_gap=-1
-        #Gerenciamento das Seeds
+        #Management of seeds
         if(self.Var):
             if(self.cont_gap==self.MAX_CONT): self.cont_gap = 0
             start_gap = int(self.Gap_Vector[self.cont_gap])

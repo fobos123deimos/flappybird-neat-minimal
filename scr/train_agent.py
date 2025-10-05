@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from numpy import *
 from ple import PLE
 from ple.games import FlappyBird
-import SBGames_Paper_0.neat_visualizations as neat_visualizations
+import neat_visualizations
 
 # === GLOBAL METRICS FOR PLOTTING ===
 avg_fitness_per_gen = []   # Average fitness per generation
@@ -39,7 +39,7 @@ WEIGHT_SCENARIO_3 = 6.0
 # === ENVIRONMENT SETUP ===
 # Initialize the game with a default pipe gap configuration
 initial_gaps = [25 for _ in range(NUM_PIPES)]
-game = FlappyBird(pipe_gap_config=True, init_gap=initial_gaps, pipe_count=NUM_PIPES)
+game = FlappyBird(Var=True, Gap_Vector=initial_gaps, MAX_CONT=NUM_PIPES, pipe_gap=100)
 env = PLE(game)
 
 # Define custom pipe gap configurations for each scenario
@@ -154,6 +154,7 @@ def eval_genomes(genomes, config):
     print("Avg fitness:", avg_fitness_per_gen[-1])
     print("Best score:", max(scenario_raw_scores))
     print("Avg score:", avg_score_per_gen[-1])
+    print("\n")
 
 
 def run(config_file):
@@ -193,8 +194,9 @@ def run(config_file):
 
     # Visualize the winning neural network and species evolution
     node_names = {-3: 'Player_Y', -2: 'Pipe_Bottom_Y', -1: 'Gap_Center_Y', 0: 'Jump_Prob'}
-    neat_visualizations.draw_net(config, winner, view=True, node_names=node_names)
-    neat_visualizations.plot_species(stats, view=True)
+    neat_visualizations.draw_neural_network(config, winner, view=True, node_names=node_names)
+    neat_visualizations.plot_species_distribution(stats, view=True)
+    neat_visualizations.plot_fitness_statistics(stats, view=True)
 
     # === Plot: Fitness over generations ===
     plt.plot(range(1, len(avg_fitness_per_gen) + 1), avg_fitness_per_gen, linewidth=2, color='blue', label='Average Fitness')
@@ -222,5 +224,5 @@ def run(config_file):
 if __name__ == '__main__':
     # Entry point: resolve config path and launch run()
     local_dir = os.path.dirname(__file__)
-    config_path = os.path.join(local_dir, '..', 'config', 'flappy_neat_feedforward_config.txt')
+    config_path = os.path.join(local_dir, '..', 'config', 'flappy_neat_feedforward_config')
     run(config_path)

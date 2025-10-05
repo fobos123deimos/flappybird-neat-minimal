@@ -7,11 +7,22 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'ple_custom'))
 
 import neat
 from random import randint
-import numpy as np
 from ple import PLE
 from ple.games import FlappyBird
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from score_display_window import Ui_MainWindow  # Custom PyQt5 UI class for score display
+from score_display_window import UiMainWindow  # Custom PyQt5 UI class for score display
+import glob
+
+def restore_latest_checkpoint(dir_path='.'):
+    # Find files named neat-checkpoint-* and pick the one with the largest numeric suffix
+    files = glob.glob(os.path.join(dir_path, 'neat-checkpoint-*'))
+    if not files:
+        raise FileNotFoundError(f"No checkpoints found in {dir_path}")
+    latest = max(files, key=lambda p: int(os.path.basename(p).split('-')[-1]))
+    print("Using checkpoint:", os.path.basename(latest))
+    return neat.Checkpointer.restore_checkpoint(latest)
+
+
 
 # === CONFIGURATION ===
 
@@ -28,14 +39,14 @@ scenario_gaps = [[randint(0, 160) for _ in range(NUM_PIPES)] for _ in range(NUM_
 # === GAME ENVIRONMENT SETUP ===
 
 # Initialize Flappy Bird game environment with custom pipe gap configuration
-game = FlappyBird(pipe_gap_config=True, init_gap=random_gaps, pipe_count=NUM_PIPES)
+game = FlappyBird(Var=True, Gap_Vector=random_gaps, MAX_CONT=NUM_PIPES, pipe_gap=100)
 env = PLE(game)
 
 # === NEAT SETUP ===
 
 # Path to NEAT configuration file
 local_dir = os.path.dirname(__file__)
-config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'flappy_neat_feedforward_config.txt')
+config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'flappy_neat_feedforward_config')
 
 # Load NEAT configuration for evolutionary algorithm
 config = neat.Config(
@@ -46,8 +57,10 @@ config = neat.Config(
     config_path
 )
 
+CKPT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # project root
+
 # Load a previously saved checkpoint from a trained NEAT population
-checkpoint = neat.Checkpointer.restore_checkpoint('neat-checkpoint-111')
+checkpoint = restore_latest_checkpoint(CKPT_DIR)
 
 # Filter genomes that already have an evaluated fitness score
 genomes = [g for g in checkpoint.population.values() if g.fitness is not None]
@@ -63,7 +76,7 @@ neural_net = neat.nn.FeedForwardNetwork.create(best_genome, config)
 # Initialize PyQt5 application and setup main score display window
 app = QApplication([])
 window = QMainWindow()
-score_ui = Ui_MainWindow()
+score_ui = UiMainWindow()
 score_ui.setupUi(window)
 window.show()
 
@@ -101,4 +114,4 @@ while True:
     # If the action resulted in positive reward, increment score and update UI
     if reward > 0:
         score += 1
-        score_ui.Adicionar_Score(score)
+        score_ui.update_score(score)

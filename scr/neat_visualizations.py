@@ -3,8 +3,11 @@ from __future__ import print_function
 import copy
 import warnings
 import graphviz
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+
+matplotlib.use("TkAgg")  
 
 
 def plot_fitness_statistics(statistics, ylog=False, view=False, filename='avg_fitness.svg'):
@@ -117,17 +120,16 @@ def plot_species_distribution(statistics, view=False, filename='speciation.svg')
         warnings.warn("Plotting not available: matplotlib is not installed.")
         return
 
+    
     species_sizes = statistics.get_species_sizes()
     num_generations = len(species_sizes)
     curves = np.array(species_sizes).T
-
     fig, ax = plt.subplots()
     ax.stackplot(range(num_generations), *curves)
 
     plt.title("Speciation Over Generations")
     plt.xlabel("Generations")
     plt.ylabel("Individuals per Species")
-
     plt.savefig(filename)
 
     if view:
