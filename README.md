@@ -16,11 +16,43 @@ A minimal and educational implementation of a **NEAT-based Flappy Bird agent**, 
 
 > 📄 [**A Minimal Training Strategy to Play Flappy Bird Indefinitely with NEAT**](https://www.sbgames.org/sbgames2019/files/papers/ComputacaoFull/198468.pdf)
 
-The project uses **NEAT**, or **NeuroEvolution of Augmenting Topologies**, to evolve a neural controller capable of playing Flappy Bird for very long periods. The key idea is to simplify the training process through **controlled scenario generation**, allowing evolution to focus on representative obstacle configurations instead of relying only on random gameplay.
+This project uses **NEAT**, or **NeuroEvolution of Augmenting Topologies**, to evolve a neural controller capable of playing Flappy Bird for very long periods.
+
+The central idea is to simplify training through **controlled scenario generation**, allowing evolution to focus on representative obstacle configurations instead of relying only on random gameplay.
 
 ---
 
-## 🎥 Demo
+# 🧭 Table of Contents
+
+- [Demo](#-demo)
+- [Conceptual Map](#-conceptual-map)
+- [Main Usage per File](#-main-usage-per-file)
+- [Repository Structure](#-repository-structure)
+- [Dependencies & Libraries](#-dependencies--libraries)
+- [Computational Concepts](#-computational-concepts)
+- [NEAT Algorithm Background](#-neat-algorithm-background)
+- [Game Domain: Flappy Bird](#-game-domain-flappy-bird)
+- [Controlled Scenario Generation](#-controlled-scenario-generation)
+- [Custom Fitness Function](#-custom-fitness-function)
+- [Custom PLE Environment](#-about-the-custom-ple-environment)
+- [Current Architecture](#-current-architecture)
+- [Time and Space Complexity](#-time-and-space-complexity)
+- [How to Run](#️-how-to-run)
+- [Expected Outputs](#-expected-outputs)
+- [Behavior Summary](#-behavior-summary)
+- [Suggested Study Path](#-suggested-study-path)
+- [Technologies and Tools](#-technologies-and-tools)
+- [Future Improvements](#-future-improvements)
+- [Troubleshooting](#️-troubleshooting)
+- [Notes](#️-notes)
+- [Image Credits and Licenses](#️-image-credits-and-licenses)
+- [Third-Party Notice](#-third-party-notice)
+- [References and Further Reading](#-references-and-further-reading)
+- [License](#-license)
+
+---
+
+# 🎥 Demo
 
 A sample of the trained NEAT agent playing Flappy Bird is available here:
 
@@ -34,28 +66,7 @@ assets/demo_result.mp4
 
 ---
 
-## 📌 Overview
-
-This repository explores how a neural network can be evolved to control a Flappy Bird agent using a minimal training strategy.
-
-The project combines:
-
-```text
-NEAT neuroevolution
-Flappy Bird gameplay
-controlled scenario generation
-custom fitness evaluation
-modified PLE environment
-neural network visualization
-training statistics
-agent evaluation with GUI
-```
-
-The goal is not only to make the agent play well, but also to show how a carefully designed training setup can make the learning process simpler, faster, and more interpretable.
-
----
-
-## 🧭 Conceptual Map
+# 🧭 Conceptual Map
 
 ```mermaid
 graph TD
@@ -98,7 +109,7 @@ graph TD
 
 ---
 
-## ✅ Main Usage per File
+# ✅ Main Usage per File
 
 | File | Description |
 |---|---|
@@ -114,7 +125,7 @@ graph TD
 
 ---
 
-## 📂 Repository Structure
+# 📂 Repository Structure
 
 ```text
 flappy-neat-minimal/
@@ -144,7 +155,7 @@ flappy-neat-minimal/
 
 ---
 
-## 🧠 Dependencies & Libraries
+# 🧠 Dependencies & Libraries
 
 | Library / Tool | Purpose |
 |---|---|
@@ -158,7 +169,7 @@ flappy-neat-minimal/
 
 ---
 
-## 📘 Computational Concepts
+# 📘 Computational Concepts
 
 This project demonstrates several important computational and artificial intelligence concepts:
 
@@ -480,7 +491,9 @@ This project uses a modified version of the **PyGame Learning Environment**, sto
 ple_custom/
 ```
 
-The original PLE provides a reinforcement-learning-style interface for game environments. In this project, PLE is adapted to support deterministic and controlled Flappy Bird training.
+The original PLE provides a reinforcement-learning-style interface for game environments.
+
+In this project, PLE is adapted to support deterministic and controlled Flappy Bird training.
 
 ---
 
@@ -1076,34 +1089,3 @@ LICENSE
 ```
 
 for details.
-
----
-
-# ✅ Summary
-
-This repository implements a minimal NEAT-based training strategy for Flappy Bird.
-
-It connects:
-
-```text
-Flappy Bird
-NEAT
-neuroevolution
-controlled scenarios
-custom fitness functions
-modified PLE environment
-training visualization
-evolved neural networks
-game AI
-```
-
-The main emphasis is:
-
-```text
-Simplify the environment.
-Control the scenarios.
-Evaluate behavior consistently.
-Reward survival, score, and alignment.
-Evolve compact neural controllers.
-Visualize and evaluate the best agent.
-```
